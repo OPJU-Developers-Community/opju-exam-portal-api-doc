@@ -1,0 +1,63 @@
+---
+sidebar_position: 2
+---
+
+# Authentication
+
+## Signup
+
+`DEV
+http://localhost:8000/api/admin/signup`
+
+`PROD
+http://localhost:8000/api/admin/signup`
+
+### Request Body
+
+| Name     | Type   | Validation     |
+| -------- | ------ | -------------- |
+| username | string | required       |
+|          |        | min length 3   |
+|          |        | max length 126 |
+| email    | string | required       |
+|          |        | valid email    |
+| password | string | required       |
+|          |        | min length 6   |
+
+### Example
+
+```
+axios.post("{BASE_URL}/api/admin/signup",
+{
+  username: "admin4",
+  email: "admin0@gmail.com",
+  password: "admin@123"
+})
+```
+
+## Login
+
+`DEV
+http://localhost:8000/api/admin/signup`
+
+`PROD
+http://localhost:8000/api/admin/signup`
+
+### Request Body
+
+| Name     | Type   | Validation   |
+| -------- | ------ | ------------ |
+| email    | string | required     |
+|          |        | valid email  |
+| password | string | required     |
+|          |        | min length 6 |
+
+### Example
+
+```
+axios.post("{BASE_URL}/api/admin/login",
+{
+    email: "admin0@gmail.com",
+    password: "admin@123"
+})
+```

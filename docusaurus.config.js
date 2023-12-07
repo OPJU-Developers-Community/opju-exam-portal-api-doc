@@ -88,17 +88,7 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "API's",
-                to: "/docs/intro",
-              },
-            ],
-          },
-        ],
+        links: [],
         copyright: `Copyright © ${new Date().getFullYear()} opju exam portal, Inc. Built with Docusaurus.`,
       },
       prism: {
