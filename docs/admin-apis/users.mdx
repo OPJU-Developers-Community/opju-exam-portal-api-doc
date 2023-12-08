@@ -1,0 +1,74 @@
+---
+sidebar_position: 2
+---
+
+# User Management
+
+## Create user - `POST`
+
+`DEV
+http://localhost:8000/api/v1/admin/create-assessment-coordinator?type={user_type}`
+
+`PROD
+http://localhost:8000/api/v1/admin/create-assessment-coordinator?type={user_type}`
+
+### Query parameters
+
+| Name | Type   | Values            |
+| ---- | ------ | ----------------- |
+| type | string | question_setter   |
+|      |        | question_verifier |
+|      |        | question_examiner |
+
+### Request Body
+
+| Name      | Type   | Validation       |
+| --------- | ------ | ---------------- |
+| email     | string | required         |
+| password  | string | required         |
+|           |        | min length 6     |
+| firstname | string | required         |
+|           |        | min length 3     |
+|           |        | min length 126   |
+| lastname  | string | min length 3     |
+| access    | array  | required         |
+|           |        | array of strings |
+|           |        | min length 1     |
+
+### Example
+
+```
+axios.post("{BASE_URL}/api/v1/admin/create-assessment-coordinator?type={question_setter}",
+{
+    "first_name": "Dale",
+    "last_name": "Zambrano",
+    "email_id":"qu@gmail.com",
+    "password": "questionSett@gmail.com",
+    "subject_access": ["operating system", "database management system", "networking"],
+    "user_type": "question_setter"
+})
+```
+
+## Get users - `GET`
+
+`DEV
+http://localhost:8000/api/v1/admin/get-assessment-coordinator?type={user_type}&page={page_no}&limit={no_of_data}`
+
+`PROD
+http://localhost:8000/api/v1/admin/get-assessment-coordinator?type={user_type}&page={page_no}&limit={no_of_data}`
+
+### Query parameters
+
+| Name  | Type   | Values            |
+| ----- | ------ | ----------------- |
+| type  | string | question_setter   |
+|       |        | question_verifier |
+|       |        | question_examiner |
+| page  | number | 1- n              |
+| limit | number | n                 |
+
+### Example
+
+```
+axios.get("{BASE_URL}/api/v1/admin/get-assessment-coordinator?type=all&page=1&limit=10")
+```
