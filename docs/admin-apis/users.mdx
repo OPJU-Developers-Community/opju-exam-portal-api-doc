@@ -6,11 +6,15 @@ sidebar_position: 2
 
 ## Create user - `POST`
 
-`DEV
-http://localhost:8000/api/v1/admin/create-assessment-coordinator?type={user_type}`
+`BASE_URL: DEV | PROD`
 
-`PROD
-http://localhost:8000/api/v1/admin/create-assessment-coordinator?type={user_type}`
+```
+DEV: http://localhost:8000/api/v1/admin/create-assessment-coordinator?type={user_type}
+```
+
+```
+PROD: http://localhost:8000/api/v1/admin/create-assessment-coordinator?type={user_type}
+```
 
 ### Query parameters
 
@@ -49,13 +53,23 @@ axios.post("{BASE_URL}/api/v1/admin/create-assessment-coordinator?type={question
 })
 ```
 
+### Response
+
+```
+UNKNOWN
+```
+
 ## Get users - `GET`
 
-`DEV
-http://localhost:8000/api/v1/admin/get-assessment-coordinator?type={user_type}&page={page_no}&limit={no_of_data}`
+`BASE_URL: DEV | PROD`
 
-`PROD
-http://localhost:8000/api/v1/admin/get-assessment-coordinator?type={user_type}&page={page_no}&limit={no_of_data}`
+```
+DEV: http://localhost:8000/api/v1/admin/get-assessment-coordinator?type={user_type}&page={page_no}&limit={no_of_data}
+```
+
+```
+PROD: http://localhost:8000/api/v1/admin/get-assessment-coordinator?type={user_type}&page={page_no}&limit={no_of_data}
+```
 
 ### Query parameters
 
@@ -71,6 +85,12 @@ http://localhost:8000/api/v1/admin/get-assessment-coordinator?type={user_type}&p
 
 ```
 axios.get("{BASE_URL}/api/v1/admin/get-assessment-coordinator?type=all&page=1&limit=10")
+```
+
+### Response
+
+```
+List of users
 ```
 
 ## Edit user - `PATCH`
