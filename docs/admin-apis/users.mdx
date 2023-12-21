@@ -72,3 +72,40 @@ http://localhost:8000/api/v1/admin/get-assessment-coordinator?type={user_type}&p
 ```
 axios.get("{BASE_URL}/api/v1/admin/get-assessment-coordinator?type=all&page=1&limit=10")
 ```
+
+## Edit user - `PATCH`
+
+`BASE_URL: DEV | PROD`
+
+```
+DEV: http://localhost:8000/api/v1/admin/edit-assessment-coordinator
+```
+
+```
+PROD: http://localhost:8000/api/v1/admin/edit-assessment-coordinator
+```
+
+### Request Body
+
+| Name           | Type     | Validation |
+| -------------- | -------- | ---------- |
+| userId         | string   | required   |
+| email_id       | string   |            |
+| subject_access | string[] |            |
+| user_type      | string   |            |
+
+### Example
+
+```
+axios.post("{BASE_URL}/api/v1/admin/edit-assessment-coordinator",
+{
+    "userId": "65716d2784cedf1aaae1bed5",
+    "email_id": "quess@gmail.com"
+})
+```
+
+### Response
+
+```
+User
+```
